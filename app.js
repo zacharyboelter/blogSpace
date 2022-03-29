@@ -33,7 +33,15 @@ fetch('https://apis.scrimba.com/jsonplaceholder/posts')
     }
     fetch('https://apis.scrimba.com/jsonplaceholder/posts', options)
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => {
+            document.getElementById('posts').innerHTML = 
+            `
+            <h3>${data.title}</h3>
+            <p>${data.body}</p>
+            <hr />
+            ${document.getElementById('posts').innerHTML}
+            `
+        })
 })
 
 
