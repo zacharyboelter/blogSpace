@@ -24,5 +24,29 @@ fetch('https://apis.scrimba.com/jsonplaceholder/posts')
         title: postTitle,
         body: postBody
     }
-    console.log(data)
+    const options = {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    }
+    fetch('https://apis.scrimba.com/jsonplaceholder/posts', options)
+        .then(res => res.json())
+        .then(data => console.log(data))
 })
+
+
+
+// fetch("https://apis.scrimba.com/jsonplaceholder/posts", {
+//     method: "POST",
+//     body: JSON.stringify({
+//         title: "hello world",
+//         completed: false
+//     }),
+//     headers: {
+//         "Content-Type": "application/json"
+//     }
+// })
+//     .then(res => res.json())
+//     .then(data => console.log(data))
