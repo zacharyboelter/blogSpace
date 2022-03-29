@@ -1,22 +1,30 @@
 
-const postBtn = document.getElementById('post-button')
+//set global scope array for wide use
+let postsArray = []
 
-fetch('https://apis.scrimba.com/jsonplaceholder/posts')
-    .then(res => res.json())
-    .then(data => {
-        const postArr = data.slice(0, 5)
-        let html = ''
-        for (post of postArr) {
-            html += `
+//function to render the html
+function renderPosts() {
+    let html = ''
+    for (post of postsArray) {
+        html += `
             <h3>${post.title}</h3>
             <p>${post.body}</p>
             <hr />
             `
-        }
-        document.getElementById('posts').innerHTML = html
+    }
+    document.getElementById('posts').innerHTML = html
+}
+// fetch to load the database
+fetch('https://apis.scrimba.com/jsonplaceholder/posts')
+    .then(res => res.json())
+    .then(data => {
+        //assign objects from whole array to our globally scoped array
+        postsArray = data.slice(0, 5)
+        renderPosts()
     })
 
-    document.getElementById("new-post").addEventListener('submit', function(event) {
+    //event listener
+document.getElementById("new-post").addEventListener('submit', function (event) {
     event.preventDefault()
     const postTitle = document.getElementById('blog-title').value
     const postBody = document.getElementById('blog-post').value
@@ -31,30 +39,11 @@ fetch('https://apis.scrimba.com/jsonplaceholder/posts')
             "Content-Type": "application/json"
         }
     }
+    //POST method allows us to add posts after we update the postsArray with new entry from input
     fetch('https://apis.scrimba.com/jsonplaceholder/posts', options)
         .then(res => res.json())
         .then(data => {
-            document.getElementById('posts').innerHTML = 
-            `
-            <h3>${data.title}</h3>
-            <p>${data.body}</p>
-            <hr />
-            ${document.getElementById('posts').innerHTML}
-            `
+            postsArray.unshift(data)
+            renderPosts()
         })
 })
-
-
-
-// fetch("https://apis.scrimba.com/jsonplaceholder/posts", {
-//     method: "POST",
-//     body: JSON.stringify({
-//         title: "hello world",
-//         completed: false
-//     }),
-//     headers: {
-//         "Content-Type": "application/json"
-//     }
-// })
-//     .then(res => res.json())
-//     .then(data => console.log(data))
