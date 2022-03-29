@@ -1,7 +1,35 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;400;500&display=swap');
+
+html, body {
     text-align: center;
+    margin: 0 auto;
+    padding: 0;
+    background-color: #d0e9ea;
+    font-family: 'Raleway', sans-serif;
 }
+
+nav {
+    background-color: #1d3557;
+    color: #fff;
+    padding: .5em;
+}
+
+h1 {
+    font-size: 2rem;
+    letter-spacing: .05em;
+}
+
+p {
+    font-weight: 200;
+    letter-spacing: .02em;
+}
+
 
 hr {
     width: 50%;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
 }
