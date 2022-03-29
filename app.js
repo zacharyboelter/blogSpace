@@ -1,6 +1,5 @@
 
-let postTitle = document.getElementById('post-title')
-let post = document.getElementById('post-body')
+const postBtn = document.getElementById('post-button')
 
 fetch('https://apis.scrimba.com/jsonplaceholder/posts')
     .then(res => res.json())
@@ -16,3 +15,14 @@ fetch('https://apis.scrimba.com/jsonplaceholder/posts')
         }
         document.getElementById('posts').innerHTML = html
     })
+
+    document.getElementById("new-post").addEventListener('submit', function(event) {
+    event.preventDefault()
+    const postTitle = document.getElementById('blog-title').value
+    const postBody = document.getElementById('blog-post').value
+    const data = {
+        title: postTitle,
+        body: postBody
+    }
+    console.log(data)
+})

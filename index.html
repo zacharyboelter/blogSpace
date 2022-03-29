@@ -13,7 +13,18 @@
     <nav>
         <h1>BlogSpace</h1>
     </nav>
+
+
+
+
     <div class="container">
+        <form action="" id="new-post">
+            <label for="blog-title">Title</label>
+            <input type="text" id="blog-title">
+            <label for="blog-post">Body</label>
+            <textarea name="blog-post" id="blog-post" cols="20" rows="5" placeholder="Enter post here..."></textarea>
+            <button id="post-button" class="post-btn">Post</button>
+        </form>
         <div class="posts" id="posts"></div>
     </div>
     <script src="./app.js"></script>

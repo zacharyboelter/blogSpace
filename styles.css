@@ -6,12 +6,14 @@ html, body {
     padding: 0;
     background-color: #d0e9ea;
     font-family: 'Raleway', sans-serif;
+    
 }
 
 nav {
     background-color: #1d3557;
     color: #fff;
     padding: .5em;
+    margin-bottom: 1em;
 }
 
 h1 {
@@ -29,7 +31,90 @@ hr {
     width: 50%;
 }
 
+form {
+    /* display: flex;
+    flex-direction: column; */
+    width: 30%;
+    align-items: center;
+    display: grid;
+    
+}
+
 .container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+input {
+    text-align: center;
+}
+
+
+#blog-title{
+    margin-bottom: 15px;
+    border-radius: .25rem;
+    border: none;
+}
+
+#blog-post {
+    font-family: 'Raleway',sans-serif;
+    border: none;
+    border-radius: .25rem;
+    text-align: center;
+}
+
+.post-btn {
+  margin-top: 10px;
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.85);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+}
+
+.post-btn:hover,
+.post-btn:focus {
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.post-btn:hover {
+  transform: translateY(-1px);
+}
+
+.post-btn:active {
+  background-color: #F0F0F1;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  color: rgba(0, 0, 0, 0.65);
+  transform: translateY(0);
 }
