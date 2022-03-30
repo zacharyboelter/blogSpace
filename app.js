@@ -1,4 +1,4 @@
-
+const form = document.getElementById('new-post')
 //set global scope array for wide use
 let postsArray = []
 
@@ -24,7 +24,7 @@ fetch('https://apis.scrimba.com/jsonplaceholder/posts')
     })
 
     //event listener
-document.getElementById("new-post").addEventListener('submit', function (event) {
+form.addEventListener('submit', function (event) {
     event.preventDefault()
     const postTitle = document.getElementById('blog-title').value
     const postBody = document.getElementById('blog-post').value
@@ -46,5 +46,5 @@ document.getElementById("new-post").addEventListener('submit', function (event) 
             postsArray.unshift(data)
             renderPosts()
         })
-        document.getElementById('new-post').reset()
+        form.reset()
 })
