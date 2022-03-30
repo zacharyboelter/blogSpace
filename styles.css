@@ -24,6 +24,7 @@ h1 {
 p {
     font-weight: 200;
     letter-spacing: .02em;
+    padding: 0 15px;
 }
 
 
@@ -34,9 +35,10 @@ hr {
 form {
     /* display: flex;
     flex-direction: column; */
-    width: 30%;
+    /* width: 30%; */
     align-items: center;
     display: grid;
+    padding: 0 15px;
     
 }
 
